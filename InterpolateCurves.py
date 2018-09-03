@@ -1,0 +1,21 @@
+import rhinoscriptsyntax as rs
+import random
+x = random.randint(0,50)
+y = random.randint(0,50)
+z = random.randint(0,50)
+xx = random.randint(51,100)
+yy = random.randint(51,100)
+zz = random.randint(51,100)
+p = rs.AddPoint(x,y,z)
+pp = rs.AddPoint(xx,yy,zz)
+for i in range (100):
+    x1 = random.randint(x,xx)
+    y1 = random.randint(y,yy)
+    z1 = random.randint(z,zz)
+    p1 = rs.AddPoint(x1,y1,z1)
+    rs.HideObjects(p1)
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    c = rs.AddInterpCurve([p,p1,pp],3,0,None,None)
+    rs.ObjectColor(c,[r,g,b])
